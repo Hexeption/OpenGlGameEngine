@@ -23,7 +23,7 @@
     <ProjectGuid>{CB7A639D-5B46-4406-AB82-BFC6CDDE1AA3}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>GameEngine</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -143,6 +143,7 @@
     <ClCompile Include="Engine\Graphics\Texture.cpp" />
     <ClCompile Include="Engine\Graphics\Sprite.cpp" />
     <ClCompile Include="Engine\Maths\Maths.cpp" />
+    <ClCompile Include="Engine\Maths\Rect.cpp" />
     <ClCompile Include="Engine\Maths\Vector3.cpp" />
     <ClCompile Include="Game.cpp" />
   </ItemGroup>
@@ -151,13 +152,14 @@
     <ClInclude Include="Engine\Graphics\Sprite.h" />
     <ClInclude Include="Engine\Graphics\Texture.h" />
     <ClInclude Include="Engine\Maths\Maths.h" />
+    <ClInclude Include="Engine\Maths\Rect.h" />
     <ClInclude Include="Engine\Maths\Vector3.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <Library Include="Engine\Graphics\SOIL\lib\SOIL.lib" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="Engine\Graphics\SOIL\lib\SOIL.lib" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

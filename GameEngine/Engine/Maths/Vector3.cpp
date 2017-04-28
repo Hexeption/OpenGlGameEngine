@@ -4,12 +4,12 @@
 
 float Vector3::Dot(const Vector3& a, const Vector3& b)
 {
-	a.x * b.x + a.y * b.y;
+	return a.x * b.x + a.y * b.y;
 }
 
 Vector3 Vector3::Project(const Vector3& a, const Vector3& b)
 {
-	return Vector3(Vector3::Dot(a, b) / ((float)pow(b.x, 2) + (float)pow(b.y, 2))) * b.x, (Vector3::Dot(a, b) / ((float)pow(b.x, 2) + (float)pow(b.y, 2))) * b.y, 0);
+	return Vector3((Vector3::Dot(a, b) / ((float)pow(b.x, 2) + (float)pow(b.y, 2))) * b.x,(Vector3::Dot(a, b) / ((float)pow(b.x, 2) + (float)pow(b.y, 2))) * b.y,0);
 }
 
 Vector3::Vector3()
