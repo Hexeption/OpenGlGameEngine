@@ -1,6 +1,9 @@
 #include "Engine/Engine.h"
 #include "Engine/Graphics/Sprite.h"
 
+//Removes console
+//#pragma comment(linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" )
+
 int main()
 {
 	cout << "Hello World" << endl;

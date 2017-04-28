@@ -1,7 +1,7 @@
 #include "Keyboard.h"
 
 bool Keyboard::keys[GLFW_KEY_LAST] = { 0 };
-bool Keyboard::keysPressing[GLFW_KEY_LAST] = { 0 };
+bool Keyboard::keyPressed[GLFW_KEY_LAST] = { 0 };
 bool Keyboard::keyReleased[GLFW_KEY_LAST] = { 0 };
 
 void Keyboard::KeyCallback(GLFWwindow * window, int key, int scancode, int action, int mods)
@@ -11,30 +11,30 @@ void Keyboard::KeyCallback(GLFWwindow * window, int key, int scancode, int actio
 
 	if (action != GLFW_RELEASE && keys[key] == false)
 	{
-		keysPressing[key] = true;
+		keyPressed[key] = true;
 		keyReleased[key] = false;
 	}
 
 	if (action != GLFW_RELEASE && keys[key] == false)
 	{
-		keysPressing[key] = false;
+		keyPressed[key] = false;
 		keyReleased[key] = true;
 	}
 
 	keys[key] = action != GLFW_RELEASE;
 }
 
-bool Keyboard::KeyDown(int key)
+bool Keyboard::KeyPressed(int key)
 {
-	bool x = keysDown[key];
-	keysDown[key] = false;
+	bool x = keyPressed[key];
+	keyPressed[key] = false;
 	return x;
 }
 
-bool Keyboard::KeyUp(int key)
+bool Keyboard::KeyReleased(int key)
 {
-	bool x = keysUp[key];
-	keysUp[key] = false;
+	bool x = keyReleased[key];
+	keyReleased[key] = false;
 	return x;
 }
 
@@ -42,4 +42,5 @@ bool Keyboard::Key(int key)
 {
 	return keys[key];
 }
+
 
